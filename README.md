@@ -4,6 +4,9 @@
 3. add a keys.js to config folder
 5. Inside paste :
   module.exports = {
-    GOOGLE_CLIENT_ID:'/Google client id generated here: https://console.cloud.google.com/apis/credentials/',
-    GOOGLE_CLIENT_SECRET: '/secret from https://console.cloud.google.com/apis/credentials/'
+    GOOGLE_CLIENT_ID:'<Google client id generated here: https://console.cloud.google.com/apis/credentials/>',
+    GOOGLE_CLIENT_SECRET: '<secret for that client>'
+    MONGO_URL: '<url from your cluster with username and password>'
 }
+6.Docker:
+ docker build -t <imageName> .
