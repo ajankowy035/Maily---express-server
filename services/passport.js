@@ -5,6 +5,16 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 const keys = require('../config/keys');
 
+passport.serializeUser((user, done) => {
+  done(null, user.id)
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+    .then(user => {
+      done(null, user);
+    })
+})
 
 passport.use(new GoogleStrategy({
   clientID: keys.GOOGLE_CLIENT_ID,
@@ -13,6 +23,7 @@ passport.use(new GoogleStrategy({
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 
 },
+
 function(accessToken, refreshToken, profile, done) {
   User.findOne({ googleId: profile.id })
     .then((existingUser) => {
