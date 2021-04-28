@@ -8,5 +8,5 @@
     GOOGLE_CLIENT_SECRET: '<secret for that client>'
     MONGO_URL: '<url from your cluster with username and password>'
 }
-6.Docker:
+5.Docker:
  docker build -t <imageName> .
