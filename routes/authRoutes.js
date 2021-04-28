@@ -10,4 +10,12 @@ app.get('/auth/google/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
+
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  })
+
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+  })
 };
