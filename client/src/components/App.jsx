@@ -24,7 +24,7 @@ class App extends React.Component{
                 <BrowserRouter>
                     <Nav />
 
-                    <Route  exact path='/' component={Main} />
+                    <Route  exact path='/main' component={Main} />
                 
                     <Route exact path='/surveys' component={Surveys} />
                     <Route exact path='/surveys/new' component={NewSurvey} />
@@ -35,8 +35,6 @@ class App extends React.Component{
     }
 }
 
-function mapStateToProps({ auth }) {
-    return { auth };
-  }
 
-export default connect(mapStateToProps, actions)(App);
+
+export default connect(null, actions)(App);

@@ -64,6 +64,25 @@
   margin-left: 10px;
 }
 
+.app__nav__right__item__logout {
+  color: #f0f0f0;
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 0.8rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: 50px;
+  position: relative;
+  top: 10px;
+}
+
+.app__nav__right__item__logout__icon {
+  height: 30px;
+  width: 30px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .app__nav__right__item__link {
   color: #f0f0f0;
   text-decoration: none;

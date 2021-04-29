@@ -67,6 +67,23 @@ $rad: 10px;
         }
       }
 
+      &__logout {
+        color: color(bg);
+        list-style-type: none;
+        text-decoration: none;
+        font-size: 0.8rem;
+        align-self: flex-end;
+        margin-left: 50px;
+        position: relative;
+        top: 10px;
+
+        &__icon {
+          height: 30px;
+          width: 30px;
+          transform: rotate(90deg);
+        }
+      }
+
       &__link {
         color: color(bg);
         text-decoration: none;
