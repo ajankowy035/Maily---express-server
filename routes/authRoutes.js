@@ -13,6 +13,7 @@ app.get('/auth/google/callback',
 
   app.get('/api/current_user', (req, res) => {
     res.send(req.user);
+    // console.log('data send:' + req.user);
   })
 
   app.get('/api/logout', (req, res) => {

@@ -36,10 +36,36 @@ $rad: 10px;
     list-style-type: none;
     display: flex;
     margin-left: 50%;
-
+    left: 10%;
+    position: relative;
+    top: 10px;
     &__item {
       color: color(bg);
       margin-left: 1%;
+
+      &__user {
+        display: flex;
+        color: color(bg);
+        align-items: center;
+        border: 2px solid color(bg);
+        border-radius: 20px;
+        height: 40px;
+
+        &__photo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid color(bg);
+          margin-left: 10px;
+          position: relative;
+          left: 2px;
+        }
+
+        &__name {
+          font-size: 0.8rem;
+          margin-left: 10px;
+        }
+      }
 
       &__link {
         color: color(bg);

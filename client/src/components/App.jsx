@@ -1,4 +1,4 @@
-import React, {useEffect, useSelector} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -12,13 +12,13 @@ import * as actions from '../actions';
 
 class App extends React.Component{
     // const state = useSelector( state.auth );
-
-   componentDidMount(){
-    this.props.fetchUser();
-    };
+    componentDidMount() {
+        this.props.fetchUser();
+      }
+    
 
     render(){
-        console.log(this.props);
+        // console.log('app is running');
         return(
             <main className='app'>            
                 <BrowserRouter>
@@ -35,8 +35,8 @@ class App extends React.Component{
     }
 }
 
-const mapStateToProps = ({auth}) => {
-    return {auth}
-}
+function mapStateToProps({ auth }) {
+    return { auth };
+  }
 
-export default connect(mapStateToProps, actions) (App);
+export default connect(mapStateToProps, actions)(App);
