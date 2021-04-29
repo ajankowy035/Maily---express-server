@@ -7,7 +7,7 @@ const keys = require('./config/keys');
 require ('./models/User');
 require('./services/passport');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 mongoose.connect(keys.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true} )
 
 const app = express();

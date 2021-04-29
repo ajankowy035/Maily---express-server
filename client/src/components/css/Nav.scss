@@ -1,0 +1,115 @@
+$colors: (
+  bg: #f0f0f0,
+  boxBg: #f7f7f7,
+  text: #414141,
+  accent: #16817a,
+  dAccent: #024249,
+  warn: #fa744f,
+  lWarn: #f79071,
+);
+
+@function color($colorname) {
+  @return map-get($colors, $colorname);
+}
+
+$rad: 10px;
+
+.app__nav {
+  background-color: color(accent);
+  margin: 0;
+  color: color(bg);
+  text-decoration: none;
+  height: 60px;
+
+  display: flex;
+
+  &__logo {
+    align-self: flex-start;
+    color: color(bg);
+    text-decoration: none;
+    margin-left: 2%;
+    margin-top: 15px;
+  }
+
+  &__right {
+    align-self: flex-end;
+    list-style-type: none;
+    display: flex;
+    margin-left: 50%;
+    left: 10%;
+    position: relative;
+    top: 10px;
+    &__item {
+      color: color(bg);
+      margin-left: 1%;
+
+      &__user {
+        display: flex;
+        color: color(bg);
+        align-items: center;
+        border: 2px solid color(bg);
+        border-radius: 20px;
+        height: 40px;
+
+        &__photo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid color(bg);
+          margin-left: 10px;
+          position: relative;
+          left: 2px;
+        }
+
+        &__name {
+          font-size: 0.8rem;
+          margin-left: 10px;
+        }
+      }
+
+      &__logout {
+        color: color(bg);
+        list-style-type: none;
+        text-decoration: none;
+        font-size: 0.8rem;
+        align-self: flex-end;
+        margin-left: 50px;
+        position: relative;
+        top: 10px;
+
+        &__icon {
+          height: 30px;
+          width: 30px;
+          transform: rotate(90deg);
+        }
+      }
+
+      &__link {
+        color: color(bg);
+        text-decoration: none;
+        display: flex;
+
+        &--google {
+          border-radius: $rad;
+          background-color: color(bg);
+          padding: 10px;
+          width: 180px;
+          cursor: pointer;
+          align-items: center;
+          margin-top: 15px;
+
+          &__icon {
+            width: 26px;
+            height: 26px;
+            margin-left: 10px;
+          }
+
+          &__text {
+            color: color(text);
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

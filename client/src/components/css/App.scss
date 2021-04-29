@@ -1,0 +1,27 @@
+$colors: (
+  bg: #f0f0f0,
+  boxBg: #f7f7f7,
+  text: #414141,
+  accent: #16817a,
+  dAccent: #024249,
+  warn: #fa744f,
+  lWarn: #f79071,
+);
+
+@function color($colorname) {
+  @return map-get($colors, $colorname);
+}
+
+html {
+  font-size: 18px;
+}
+body {
+  margin: 0;
+  background-color: color(bg);
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+
+  .app {
+    padding: 0;
+  }
+}

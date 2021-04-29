@@ -24,24 +24,20 @@ passport.use(new GoogleStrategy({
 
 },
 
-function(accessToken, refreshToken, profile, done) {
-  User.findOne({ googleId: profile.id })
-    .then((existingUser) => {
-      if(!existingUser){
-        new User ({
-          googleId: profile.id,
-          name: profile.name.givenName,
-          photo: profile._json.picture
-        }).save()
-        .then(user => done(null, user));
-        // console.log(profile);
-        
-      }else{
-        done(null, existingUser);
-      }
-    })
-  
-}
+async (accessToken, refreshToken, profile, done) => {
+  const existingUser = await User.findOne({ googleId: profile.id })
+    if(!existingUser){
+      const user = await new User ({
+        googleId: profile.id,
+        name: profile.name.givenName,
+        photo: profile._json.picture
+      }).save()
+       done(null, user);
+      // console.log(profile);
+    }else{
+      done(null, existingUser);
+    }
+  }
 ));
 
   
