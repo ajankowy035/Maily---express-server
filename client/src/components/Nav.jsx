@@ -5,6 +5,7 @@ import google from './icons/google.svg';
 import {fetchUser} from '../actions/index';
 import './css/Nav.css';
 import { connect } from 'react-redux';
+import StripePay from './StripePay';
 import logout from './icons/logout.svg';
 
 class Nav extends React.Component {
@@ -31,6 +32,8 @@ class Nav extends React.Component {
           default:
             return (
                 <React.Fragment>
+                    <StripePay />
+
                     <li className='app__nav__right__item'>
                         <div className='app__nav__right__item__user'>
                             <p className='app__nav__right__item__user__name'>{this.props.auth.name}</p>
@@ -49,7 +52,7 @@ class Nav extends React.Component {
         }
     }
     render(){
-        console.log(this.props.auth);
+        // console.log(this.props.auth);
         return(
         <nav className='app__nav'>
             <Link to='/' className='app__nav__logo' >Maily</Link>
